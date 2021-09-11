@@ -1,0 +1,30 @@
+################################################ MICROSERVICES ARCHITECTURAL PATTERN #####################################################
+
+1. Each domain of our high level application has a service that serve exactly what it needs to operate smoothly with in a business with minimal impact on other services
+2. It is used to avoid monolithic development(means we don't allow our code to grow largely because we make a new service for a new feature) 
+3. The hardest part of microservices architecture is communication b/w services
+4, Because the databases of microservices are different here, we cannot define foreign keys between the data of these microservices
+	Eg. Completing a chain of http requests(belongs to different services or domains) is the last resort(last option) for communicating b/w services
+5. We have 3 ways to communicating b/w microservices
+	i) Synchronous Way (using http requests)
+	ii) Using Asynchronous way (using message Queues like rabbitMQ or Kafka or SQS)
+	iii) Using websockets (not a good way, have several fault cases)
+	
+	
+6. In Monolithic, we can easily execute ACID transactions but in microservices this is complicated, we have 2 ways:- 
+	i) Using 2PC (two-phase commit, this is slow because it is synchronous can only be used with very low traffic)
+	ii) Saga Pattern (https://microservices.io/patterns/data/saga.html, https://www.youtube.com/watch?v=WnZ7IcaN_JA, https://dzone.com/articles/microservices-using-saga-pattern)
+	link for diiference:- https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture#what_is_the_problem_ 
+	
+	
+7. SAGA Pattern:- The saga design pattern is a way to manage data consistency across microservices in distributed transaction scenarios. A saga is a sequence of transactions that updates each service and publishes a message or event to trigger the next transaction step.
+
+
+
+###################################################### Important Links ####################################################################
+1. https://blog.devgenius.io/microservice-architecture-communication-design-patterns-70b37beec294
+2. https://jpdeffo.medium.com/communication-between-microservices-what-we-need-to-know-as-beginner-integration-event-media-e1ed107b1e78
+3. https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture
+4. https://medium.com/swlh/real-time-exchange-information-with-microservices-and-nodejs-e6bf6623bca6
+5. https://dzone.com/articles/authentication-and-authorization-in-microservices
+6. https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga
