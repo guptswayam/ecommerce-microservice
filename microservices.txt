@@ -17,7 +17,8 @@
 	link for diiference:- https://developers.redhat.com/blog/2018/10/01/patterns-for-distributed-transactions-within-a-microservices-architecture#what_is_the_problem_ 
 	
 	
-7. SAGA Pattern:- The saga design pattern is a way to manage data consistency across microservices in distributed transaction scenarios. A saga is a sequence of transactions that updates each service and publishes a message or event to trigger the next transaction step.
+7. SAGA Pattern:- The saga design pattern is a way to manage data consistency across microservices in distributed transaction scenarios. 
+	- A saga is a sequence of transactions that updates each service and publishes a message or event to trigger the next transaction step.
 
 
 

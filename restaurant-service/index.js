@@ -90,7 +90,7 @@ app.get("/restaurants/:restaurantId", isAuthenticated, async (req, res) => {
 })
 
 app.use((err, req, res, next) => {
-    console.log(error)
+    console.log(err)
     res.status(500).json(err.message)
 })
 
